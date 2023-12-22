@@ -1,12 +1,6 @@
-variable "project_name" {
-  type        = string
- 
-}
+variable "project_name" {}
 
-variable "project_env" {
-  type        = string
- 
-}
+variable "project_env" { }
 
 
 locals {
@@ -15,7 +9,5 @@ locals {
 }
 
 
-variable "ami_id" {
-  type        = string
-}
+variable "ami_id"{ }
 
