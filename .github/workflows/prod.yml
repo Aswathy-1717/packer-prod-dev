@@ -1,4 +1,4 @@
-name: "Image-creation-production"
+name: "Image-creation"
 
 on:
   push:
