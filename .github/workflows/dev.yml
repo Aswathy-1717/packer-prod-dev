@@ -18,20 +18,19 @@ jobs:
       - name: "Setup packer"
         uses: hashicorp/setup-packer@main
         with:
-          version: ${{ env.PRODUCT_VERSION }}
+          version: ${{ env.PACKER_VERSION }} 
 
       - name: "packer init"
         run: packer init .
         working-directory: ./packer/
 
       - name: "packer validate"
-        run: packer validate -var-file="dev.pkrvars.hcl".
+        run: packer validate -var-file="dev.pkrvars.hcl" 
         working-directory: ./packer/
 
       - name: "packer-formating"
         run: packer fmt .
         working-directory: ./packer/
-    
 
       - name: "building image"
         run: packer build -var-file="dev.pkrvars.hcl"
@@ -40,4 +39,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.DEV_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DEV_AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.DEV_AWS_REGION }}
+
 
