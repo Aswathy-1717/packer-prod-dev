@@ -28,7 +28,7 @@ jobs:
         working-directory: ./packer/
 
       - name: "packer validate"
-        run: packer validate -var-file=dev.pkrvars.hcl
+        run: packer validate -var-file="dev.pkrvars.hcl".
         working-directory: ./packer/
 
       - name: "packer-formating"
@@ -37,6 +37,6 @@ jobs:
     
 
       - name: "building image"
-        run: packer build -var-file=dev.pkrvars.hcl
+        run: packer build -var-file="dev.pkrvars.hcl"
         working-directory: ./packer/
 
